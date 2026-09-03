@@ -69,14 +69,55 @@ function Picker({ value, onChange, options }: { value: string; onChange: (v: str
 }
 
 const RIBBON = [
-  { label: "Incremental Overall Revenue", value: "$1.24M", delta: 17.3 },
-  { label: "Incremental Units", value: "30.7K units", delta: 15.4 },
-  { label: "Customer Targeted Count", value: "67.5K", delta: 8.2 },
-  { label: "True Promo ROI", value: "186% / 2.86x", delta: 12.1 },
-  { label: "Promo Spend (Discount Cost)", value: "$432K", delta: -3.2 },
-  { label: "Discount Efficiency Ratio (DER)", value: "1.41x", sub: "Target > 1.5x" },
-  { label: "Giveaway Margin Saved", value: "$8.2K", sub: "Suppressed high-intent buyers" },
+  {
+    label: "Incremental Revenue",
+    value: "$1.24M",
+    delta: 17.3,
+    sub: "Incremental revenue uplift generated",
+    tip: "Revenue above the organic baseline attributable to the promotion.",
+  },
+  {
+    label: "Incremental Units",
+    value: "30.7K units",
+    delta: 15.4,
+    sub: "Net units above organic baseline",
+    tip: "Units sold beyond the modelled organic run rate.",
+  },
+  {
+    label: "Customer Targeted Count",
+    value: "67,460",
+    delta: 8.2,
+    sub: "Eligible campaign cohort size",
+    tip: "Customers eligible after cluster, tier and constraint filters.",
+  },
+  {
+    label: "True Promo ROI",
+    value: "186% / 2.86x",
+    delta: 12.1,
+    sub: "NIM / Total Promo Investment",
+    tip: "Net incremental margin divided by total promotional investment.",
+  },
+  {
+    label: "Redemption Rate",
+    value: "28.4%",
+    delta: 4.5,
+    sub: "Coupon / offer redemptions",
+    tip: "Historical benchmark range: 15% – 35%.",
+  },
+  {
+    label: "Audience Reached",
+    value: "53,960",
+    sub: "80.0% of targeted · total unique delivered reach",
+    tip: "Unique customers who actually received the offer.",
+  },
+  {
+    label: "Discount Efficiency Ratio (DER)",
+    value: "1.41x",
+    sub: "Incremental revenue per $ discount spent · Target > 1.5x",
+    tip: "Below the 1.5x governance target — review discount depth.",
+  },
 ] as const;
+
 
 function ClusterMultiSelect({ value, onChange }: { value: string[]; onChange: (v: string[]) => void }) {
   const all = CLUSTER_CATALOG.map((c) => c.id);
