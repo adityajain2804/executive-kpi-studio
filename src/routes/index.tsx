@@ -205,9 +205,10 @@ function CampaignStudio() {
             label={k.label}
             value={k.value}
             delta={"delta" in k ? k.delta : undefined}
-            sub={"sub" in k ? k.sub : undefined}
-            positiveIsGood={k.label !== "Promo Spend (Discount Cost)"}
+            sub={k.sub}
+            tip={k.tip}
             compact
+
           />
         ))}
       </div>
