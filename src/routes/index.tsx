@@ -14,7 +14,6 @@ import { useGlobalFilters } from "@/hooks/use-global-filters";
 import { COUNTRIES, PROVENANCE } from "@/data/mock";
 import {
   AUDIENCE_TYPES,
-  BASELINE,
   CAMPAIGN_IDS,
   CLUSTER_CATALOG,
   OVERRIDE_REASON_CODES,
