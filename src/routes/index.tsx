@@ -291,29 +291,16 @@ function CampaignStudio() {
             </div>
           </Panel>
 
-          <Panel title="Pre-Promo Historical Baseline" subtitle="Organic performance, no promotion applied" bodyClassName="space-y-2 p-3">
-            {[
-              ["Past 90-Day Organic Revenue", BASELINE.organicRevenue],
-              ["Organic Repurchase Rate", BASELINE.repurchaseRate],
-              ["Baseline Organic Run Rate", BASELINE.runRate],
-              ["Historical Coupon Redemption", BASELINE.redemption],
-            ].map(([l, v]) => (
-              <div key={l} className="flex items-center justify-between rounded-md border border-border bg-surface-muted/50 px-2.5 py-1.5 text-xs">
-                <span className="text-muted-foreground">{l}</span>
-                <span className="font-semibold tabular-nums">{v}</span>
-              </div>
-            ))}
-            <p className="text-[11px] leading-relaxed text-muted-foreground">{BASELINE.note}</p>
-            <Button
-              className="w-full"
-              onClick={() => {
-                setRan(true);
-                toast.success(`Promo engine executed · ${campaignType} · ${channel}`);
-              }}
-            >
-              <Play className="h-4 w-4" /> Run Promo Engine
-            </Button>
-          </Panel>
+          <Button
+            className="w-full"
+            onClick={() => {
+              setRan(true);
+              toast.success(`Promo engine executed · ${campaignType} · ${channel}`);
+            }}
+          >
+            <Play className="h-4 w-4" /> Run Promo Engine
+          </Button>
+
         </div>
 
         {/* ---------------- VERTICAL 2 ---------------- */}
